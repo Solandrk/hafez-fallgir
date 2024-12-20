@@ -10,20 +10,20 @@
 <body class="text-center">
     <div class="container mt-5">
         <img src="/images/logo.png" alt="لوگوی انجمن علمی نوشیروانی" class="img-fluid mb-3" style="max-width: 150px;">
-        <h1 class="mb-4">به فال حافظ گیر انجمن علمی نوشیروانی خوش آمدید</h1>
+        <h1 class="mb-4">به فال حافظ گیر انجمن علمی مهندسی کامپیوتر نوشیروانی خوش آمدید</h1>
         <% if (poem) { %>
             <div id="falBox" class="alert alert-success" style="cursor: pointer;">
-                <p><strong>شعر:</strong> <%= poem.poem %></p>
-                <p><strong>معنی:</strong> <%= poem.meaning %></p>
-                <p><strong>مفهوم:</strong> <%= poem.concept.interpretation %></p>
-                <p><strong>درس زندگی:</strong> <%= poem.concept.life_lesson %></p>
-                <p><strong>نظر هوش مصنوعی:</strong> <%= poem.ai_opinion %></p>
+                <p><strong>شعر:</strong> <span><%= poem.poem %></span></p>
+                <p><strong>معنی:</strong>  <span><%= poem.meaning %> </span></p>
+                <p><strong>مفهوم:</strong> <span> <%= poem.concept.interpretation %> </span></p>
+                <p><strong>درس زندگی:</strong> <span> <%= poem.concept.life_lesson %></span></p>
+                <p><strong>نظر هوش مصنوعی:</strong> <span> <%= poem.ai_opinion %></span></p>
                 <p><strong>کلیک کن اینجا و با دوستان در گروه انجمن به اشتراک بزار</strong></p>
             </div>
         <% } else if (message) { %>
             <p class="alert alert-danger"><%= message %></p>
         <% } else { %>
-            <p>در صورت تمایل به دریافت فال روی دکمه زیر کلیک کنید:</p>
+            <p dir="rtl">در صورت تمایل به دریافت فال روی دکمه زیر کلیک کنید:</p>
         <% } %>
         <button id="getFalButton" class="btn btn-danger mt-3">فال حافظ من را بگیر</button>
     </div>
@@ -59,10 +59,10 @@
 
         falBox?.addEventListener('click', () => {
             dialogContent.innerHTML = `
-                <p><strong>شعر:</strong> ${falBox.querySelector('p:nth-child(1)').textContent}</p>
-                <p><strong>معنی:</strong> ${falBox.querySelector('p:nth-child(2)').textContent}</p>
-                <p><strong>مفهوم:</strong> ${falBox.querySelector('p:nth-child(3)').textContent}</p>
-                <p><strong>نظر هوش مصنوعی:</strong> ${falBox.querySelector('p:nth-child(5)').textContent}</p>
+                <p><strong>شعر:</strong> ${falBox.querySelector('p:nth-child(1)').querySelector('span').textContent}</p>
+                <p><strong>معنی:</strong> ${falBox.querySelector('p:nth-child(2)').querySelector('span').textContent}</p>
+                <p><strong>مفهوم:</strong> ${falBox.querySelector('p:nth-child(3)').querySelector('span').textContent}</p>
+                <p><strong>نظر هوش مصنوعی:</strong> ${falBox.querySelector('p:nth-child(5)').querySelector('span').textContent}</p>
                 <p>انجمن علمی مهندسی کامپیوتر دانشگاه صنعتی نوشیروانی بابل</p>
             `;
             dialogModal.style.display = 'block';
@@ -76,16 +76,16 @@
             const textToCopy = `
 ✅فال حافظ این دانشجوی عزیز دانشگاه رنک یک:
 
-🔥${falBox.querySelector('p:nth-child(1)').textContent}
+🔥${falBox.querySelector('p:nth-child(1)').querySelector('span').textContent}
 
 
-🥂${falBox.querySelector('p:nth-child(2)').textContent}
+🥂${falBox.querySelector('p:nth-child(2)').querySelector('span').textContent}
 
 
-💛${falBox.querySelector('p:nth-child(3)').textContent}
+💛${falBox.querySelector('p:nth-child(3)').querySelector('span').textContent}
 
 
-🚬${falBox.querySelector('p:nth-child(5)').textContent}
+🚬${falBox.querySelector('p:nth-child(5)').querySelector('span').textContent}
 
 
 انجمن علمی مهندسی کامپیوتر دانشگاه صنعتی نوشیروانی بابل
