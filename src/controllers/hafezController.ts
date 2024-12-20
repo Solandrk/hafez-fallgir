@@ -614,6 +614,16 @@ export const getFalPage = (req: Request, res: Response) => {
 
 export const getRandomFal = async (req: Request, res: Response) => {
     try {
+        // Log user information
+        const userIP = req.ip;
+        const userAgent = req.get('User-Agent');
+        const currentTime = new Date();
+
+        console.log(`User IP: ${userIP}`);
+        console.log(`User Agent: ${userAgent}`);
+        console.log(`Time: ${currentTime.toLocaleTimeString()}`);
+        console.log(`Date: ${currentTime.toLocaleDateString()}`);
+
         // If API available, fetch data from API
         // const response = await axios.get('https://hafezapi.example.com/random');
         // const poem = response.data.poem;
@@ -625,3 +635,4 @@ export const getRandomFal = async (req: Request, res: Response) => {
         res.render('index', { poem: null, message: 'خطایی رخ داده است. لطفا دوباره تلاش کنید.' });
     }
 };
+
