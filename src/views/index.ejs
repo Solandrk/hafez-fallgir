@@ -18,6 +18,7 @@
                 <p><strong>مفهوم:</strong> <%= poem.concept.interpretation %></p>
                 <p><strong>درس زندگی:</strong> <%= poem.concept.life_lesson %></p>
                 <p><strong>نظر هوش مصنوعی:</strong> <%= poem.ai_opinion %></p>
+                <p><strong>کلیک کن اینجا و با دوستان در گروه انجمن به اشتراک بزار</strong></p>
             </div>
         <% } else if (message) { %>
             <p class="alert alert-danger"><%= message %></p>
@@ -73,10 +74,20 @@
 
         shareButton.addEventListener('click', () => {
             const textToCopy = `
-شعر: ${falBox.querySelector('p:nth-child(1)').textContent}
-معنی: ${falBox.querySelector('p:nth-child(2)').textContent}
-مفهوم: ${falBox.querySelector('p:nth-child(3)').textContent}
-نظر هوش مصنوعی: ${falBox.querySelector('p:nth-child(5)').textContent}
+✅فال حافظ این دانشجوی دانشگاه رنک یک عزیز :
+
+${falBox.querySelector('p:nth-child(1)').textContent}
+
+
+${falBox.querySelector('p:nth-child(2)').textContent}
+
+
+${falBox.querySelector('p:nth-child(3)').textContent}
+
+
+${falBox.querySelector('p:nth-child(5)').textContent}
+
+
 انجمن علمی مهندسی کامپیوتر دانشگاه صنعتی نوشیروانی بابل
 `;
             navigator.clipboard.writeText(textToCopy);
