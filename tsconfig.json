@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "commonjs",
-    "rootDir": "./src",
-    "outDir": "./dist",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "target": "ES2020",                   // سطح تبدیل جاوااسکریپت
+    "module": "commonjs",                // ماژول‌بندی CommonJS
+    "rootDir": "./src",                  // مسیر فایل‌های ورودی
+    "outDir": "./dist",                  // مسیر خروجی فایل‌های کامپایل شده
+    "strict": true,                      // فعال کردن حالت سختگیرانه
+    "esModuleInterop": true,             // سازگاری با ماژول‌های ES
+    "skipLibCheck": true,                // صرف نظر از بررسی تایپ کتابخانه‌ها
+    "forceConsistentCasingInFileNames": true // حساسیت به کوچکی و بزرگی حروف
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src/**/*.ts"],            // فایل‌های TypeScript که شامل پروژه هستند
+  "exclude": ["node_modules", "dist"]    // مسیرهایی که باید حذف شوند
 }
